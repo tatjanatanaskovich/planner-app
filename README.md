@@ -1,24 +1,18 @@
-# README
+# PLANNER APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Ruby on Rails application is made for my students at the Rails Girls Beograd workshops.
 
-Things you may want to cover:
 
-* Ruby version
+In this app users can make a schedule of their day to day activities which they can even illustrate with photos.
 
-* System dependencies
 
-* Configuration
+### Versions:
 
-* Database creation
+* Ruby:
+  2.5.1
 
-* Database initialization
+* Rails:
+  5.2.0
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database:
+  SQLite3
