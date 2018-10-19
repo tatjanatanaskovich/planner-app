@@ -12,7 +12,7 @@ In this app users can make a schedule of their day to day activities which they 
   2.5.1
 
 * Rails:
-  5.2.0
+  5.2.1
 
 * Database:
   SQLite3
