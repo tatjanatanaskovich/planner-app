@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-10">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
+  <h3>
+    <strong> Category title is</strong>
+    <%= @category.title %>.
+  </h3>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@category.image_url, width: 600) if @category.image.present? %>
-</p>
+  <h5>
+    <strong>Category image:</strong><br><br>
+    <%= image_tag(@category.image_url, width: 600) if @category.image.present? %>
+  </h5>
+  <br>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <%= link_to 'Edit this Category', edit_category_path(@category), class: 'btn btn-outline-warning' %> 
+  <%= link_to 'Back to all Categories', categories_path, class: 'btn btn-outline-primary' %>
+</div>

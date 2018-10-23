@@ -11,32 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.text_field :title, class: 'form-control', placeholder: 'Enter a title for your Task' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    <%= form.text_area :description, class: 'form-control', placeholder: 'Enter a description for your Task' %>
   </div>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
+  <div class="form-group">
+    <%= form.label :start_date, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.datetime_select :start_date, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :due_date %>
-    <%= form.datetime_select :due_date %>
+  <div class="form-group">
+    <%= form.label :due_date, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.datetime_select :due_date, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :completed %>
-    <%= form.check_box :completed %>
+  <div class="form-group">
+    <%= form.label :completed, class: "col-sm-2 control-label" %>
+  
+      <%= form.check_box :completed %>
+    
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,35 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+  <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
+  <h3>Listing of all Tasks</h3>
+  <br>
+  <div class="table-responsive">
+    <table class="table table-condensed table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th> Task Description</th>
+          <th> Task started at:</th>
+          <th> Task finished at:</th>
+          <th>Completed?</th>
+          <th colspan="3">Tasks actions</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Start date</th>
-      <th>Due date</th>
-      <th>Completed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= task.title %></td>
+            <td><%= task.description %></td>
+            <td><%= task.start_date %></td>
+            <td><%= task.due_date %></td>
+            <td><%= task.completed %></td>
+            <td><%= link_to 'Show', task, class: 'btn btn-outline-info' %></td>
+            <td><%= link_to 'Edit', edit_task_path(task), class: 'btn btn-outline-warning' %></td>
+            <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= task.start_date %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.completed %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <br>
 
-<br>
-
-<%= link_to 'New Task', new_task_path %>
+    <%= link_to 'Make a new Task', new_task_path, class: 'btn btn-outline-primary' %>
+    <br>
+    <br>
+    <%= link_to 'View all Categories', categories_path, class: 'btn btn-outline-primary' %>
+  </div>
+</div>

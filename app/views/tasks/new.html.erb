@@ -1,5 +1,8 @@
-<h1>New Task</h1>
+<div class="col-md-8">
+  <br>
+  <h3>New Task</h3>
 
-<%= render 'form', task: @task %>
+  <%= render 'form', task: @task %>
 
-<%= link_to 'Back', tasks_path %>
+  <%= link_to 'Back to all Tasks', tasks_path, class: 'btn btn-outline-primary' %>
+</div>
