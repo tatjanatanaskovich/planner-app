@@ -8,10 +8,11 @@
       <thead>
         <tr>
           <th>Title</th>
-          <th> Task Description</th>
-          <th> Task started at:</th>
-          <th> Task finished at:</th>
-          <th>Completed?</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Completed</th>
           <th colspan="3">Tasks actions</th>
         </tr>
       </thead>
@@ -20,9 +21,15 @@
         <% @tasks.each do |task| %>
           <tr>
             <td><%= task.title %></td>
-            <td><%= task.description %></td>
-            <td><%= task.start_date %></td>
-            <td><%= task.due_date %></td>
+            <td width="100"><%= image_tag(task.category.image_url, width: 100, alt: task.category.title) if task.category.image.present? %></td>
+              <td><%= task.description %></td>
+            <td>
+              <%= task.start_date.strftime("%A") %>
+              <%= task.start_date.strftime("%d") %>
+              <%= task.start_date.strftime("%B, %Y") %>
+            </td>
+            <td><%= task.start_date.strftime("%R") %><%= task.due_date.present? ? "-#{task.due_date.strftime("%R")}" : "" %>
+            </td>
             <td><%= task.completed %></td>
             <td><%= link_to 'Show', task, class: 'btn btn-outline-info' %></td>
             <td><%= link_to 'Edit', edit_task_path(task), class: 'btn btn-outline-warning' %></td>
